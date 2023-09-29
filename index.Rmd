@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
-description: "My final project"
+author: "Hailee Youn"
+description: "Identifying the Escape Routes and Demographics of Escapee-Defectors from North Korea"
 output:
   distill::distill_article:
     self_contained: false
@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I am interested in exploring data related to escape routes of defectors from North Korea. Based on the research and literature review I've done on this topic so far, I've learned that China and South Korea are two of the most common locations to escape to, likely due to geographic proximity. More specifically, the draw of South Korea is the labor demand function--which offers a lot of jobs in the service industry. For China, illicit human trafficking and sexual exploitation seem to be alarmingly common and potentially explain why North Koreans are able to escape into China. Of these two locations, I would like to analyze census data of North Korea and China to assess the frequency of escape into both of these countries as well as specific demographics of the escapees. I'm curious to explore what proportion of the escapees are women, what age they are when they escape, who they escape with (family groups or alone), and what types of jobs they typically take on in the new country. 
