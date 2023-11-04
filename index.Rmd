@@ -20,5 +20,59 @@ Milestone 2
 Does media consumption during a presidential election season influence citizens’ decision of whether or not to vote? In this study, I plan to investigate the extent to which media consumption (listening/watching/reading/etc. news concerning the election and the candidates) impacts voter turnout rates. I hypothesize that consuming more election-related media increases voter turnout rates. With staying involved in the election and being updated about the news, I anticipate that citizens will be more vested in the outcome of the election and therefore more likely to cast a vote of their own. Media is not necessarily only stemming from national news outlets but may come from presidential candidates’ personal social media accounts or political commentary sites. Even if citizens do not agree with the ideas or actions of the candidates, having more information about such behavior could serve as a motivating factor to vote. Low voter turnout rates are a long-standing issue that the U.S. has faced for decades without a clear solution to the problem. By identifying a potential relationship between voter turnout and media consumption, voting advocacy groups can identify a possible source of encouraging more civic participation. My data is coming from the American National Election Studies (ANES) 2016 Time Series, which is a public data release of citizens’ public opinions on the 2016 election and corresponding voting behavior. The sample is comprised of traditional face-to-face interviews (n = 1,181) and surveys conducted on the Internet (n = 3,090), leading to a total sample size of 4,271 U.S. citizens. The data set also entails citizens’ reports on average media consumption, which will be explored in this study as the explanatory variable. More specifically, the explanatory variable of interest is whether the participants consumed election-related media during the election, as well as the extent to which they stayed updated. The variable is coded=1 for media consumption and coded=0 for no media consumption. While it may seem unlikely for people to completely avoid presidential media, many U.S. citizens chose to draw away from media during the 2016 presidential election due to the candidates’ heavy usage of social media, which may have led to feelings of discomfort or disturbance. My outcome variable is the voter turnout rate of citizens. For example, if the variable were coded =2,000, that would indicate that 2,000 participants voted in the election. If I observe higher voter turnout rates among those who did consume election-related media, this would provide support for my hypothesis. On the other hand, if I observe lower or equal voter turnout rates among those who consume election-related media, this would provide evidence against my hypothesis. Upon running a regression of the voter turnout rate on the media consumption indicator variable, a positive, significant coefficient would indicate support for my hypothesis.
 
 Milestone 3
+```{r}
+getwd()
+```
 
+```{r}
+install.packages("readxl")
+install.packages("writexl")
+library(readxl)
+setwd("/Users/haileeyoun/Desktop/gov50-final-project")
+EV <- read_excel("Electric_Vehicle_Population_Data.xlsx")
+library(writexl)
+write_xlsx(EV, "data_modified.xlsx")
+```
+
+
+```{r}
+filtered_data <- EV |>
+  group_by(City, `Model Year`) |>
+  summarise(Count = n()) |>
+  arrange(City, desc(`Model Year`)) |>
+  group_by(City) |>
+  top_n(1)  
+
+
+ev_model_years_plot <- ggplot(data = filtered_data, aes(x = reorder(City, -`Model Year`), y = `Model Year`, fill = City)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "City",
+    y = "Most Recent Model Year",
+    title = "Most Recent Model Year of Electric Vehicles in Different Cities"
+  ) +
+  theme_minimal() 
+
+ev_model_years_plot
+```
+
+```{r}
+library(ggplot2)
+
+scatter_plot <- ggplot(data = EV, aes(x = 'Electric Range', y = 'Model Year')) +
+  geom_point() + 
+  labs(
+    x = "Electric Range",
+    y = "Model Year",
+    title = "Scatter Electric Range vs. Model Year"
+  ) 
+scatter_plot
+```
+
+
+
+
+```{r}
+print(names(EV))
+```
 
