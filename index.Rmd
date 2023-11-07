@@ -24,7 +24,6 @@ Milestone 3
 
 
 
-
 ```{r}
 
 library(readxl)
@@ -52,5 +51,4 @@ evmodelplot <- ggplot (data = Electric,
 evmodelplot
 
 ```
-
 
