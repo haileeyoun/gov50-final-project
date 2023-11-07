@@ -22,3 +22,35 @@ Does media consumption during a presidential election season influence citizensâ
 Milestone 3
 
 
+
+
+
+```{r}
+
+library(readxl)
+
+setwd("/Users/haileeyoun/gov50-final-project")
+
+Electric <- read_excel("Electric_Vehicle_Population_Data.xlsx")
+
+
+library(writexl)
+write_xlsx(Electric, "data_modified.xlsx")
+```
+
+
+
+```{r, fig.width = 10}
+library(tidyverse)
+library(ggplot2)
+library(gapminder)
+
+evmodelplot <- ggplot (data = Electric,
+                       mapping = aes(x = `State`,
+                                     y = `Model Year`)) + labs(title = "Electric Vehicle Model Year by State") + geom_point()
+
+evmodelplot
+
+```
+
+
