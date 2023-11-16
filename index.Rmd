@@ -51,4 +51,11 @@ evmodelplot <- ggplot (data = Electric,
 evmodelplot
 
 ```
+Milestone #4
+```{r}
+ggplot(Electric, aes(x = `Electric Vehicle Type`)) + labs(title = "Popularity of Electric Vehicle Type Across All States", y = "Count") +
+  geom_bar()
+```
+In milestone 3, I created a dot plot of electric vehicle model year by state, which displayed which states have more electric vehicles on average, and which model year the vehicles were. In order to further analyze electric vehicle utilization, I created a second graphic for milestone 4. Through this bar graph, the popularity of each electric vehicle type (Battery Electric Vehicle or Plug-In Hybrid Electric Vehicle) across all states is shown. The bars show that Battery Electric Vehicles are significantly more popular, being used nearly three times as much as Plug-In Hybrid Electric Vehicles are used. Understanding which types of electric vehicles are in demand is useful information when trying to create policies that promote a shift to electric vehicles from gas-fueled vehicles. 
+
 
