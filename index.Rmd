@@ -51,7 +51,12 @@ evmodelplot <- ggplot (data = Electric,
 evmodelplot
 
 ```
-Milestone #4
+
+
+
+Milestone 4
+
+
 ```{r}
 ggplot(Electric, aes(x = `Electric Vehicle Type`)) + labs(title = "Popularity of Electric Vehicle Type Across All States", y = "Count") +
   geom_bar()
