@@ -43,9 +43,18 @@ ggplot(data = master, aes(x = year, y = suicides_no)) +
 
 Results: 
 
-The main coefficient of interest in the regression is the one associated with "gdp_per_capita ($)," which examines the relationship between a country's GDP per Capita and its suicide rate.
+The main coefficient of interest is the one associated with "gdp_per_capita....", which has an estimated coefficient of approximately 0.000016 with a standard error of approximately 0.00001. The p-value for this coefficient is 0.00189, denoted as '***,' which signifies statistical significance at the significance level of 0.05.
 
-However, the coefficient for "gdp_per_capita ($)" is estimated to be 1.447e-06, which is a very small value and indicates that there is essentially no relationship between a country's GDP per Capita and its suicide rate in this model. This means that, on average, as a country's GDP per Capita increases, there is no significant change in the suicide rate.Given that the coefficient is not statistically significant (p-value of 0.775, which is greater than the significance threshold of 0.05), we cannot conclude that there is a causal effect between GDP per Capita and suicide rates based on this model. In other words, we don't have enough evidence to say that changes in GDP per Capita directly cause changes in suicide rates. However, the other variables that I had controlled (age and sex) produced a statistically signficant p-value. This demonstrates that these other variables may have a relationship with suicide rates. 
+In this context, the coefficient indicates the estimated change in the suicide rate (suicides per 100k population) for a one-unit increase in GDP per capita. In this case, the unit is $1,000 because of the scale of the GDP variable.
+The positive coefficient (0.000016) suggests that, on average, an increase of $1,000 in GDP per capita is associated with an increase in the suicide rate. However, this relationship is very small and close to zero, given how small the value of the coefficient is. However, the small p-value (0.00189) indicates that the coefficient is statistically significant, suggesting that this relationship--albeit very small--is unlikely to have occurred by random chance alone.
+
+Although the statistical analysis shows that the coefficient is statistically significant, it's important to emphasize that this does not imply a direct causal relationship between an increase in GDP per capita and a rise in the suicide rate as correlation does not imply causation. Furthermore, given the relatively weak association observed between GDP per capita and the occurrence of suicides, it is difficult to make definitive statements about the extent of their connection. 
+
+The adjusted R-squared value (0.2962) provides information about how well the entire regression model explains the variation in suicide rates. In this case, the model explains approximately 29.62% of the variance in suicide rates.
+
+Interestingly, among the controlled variables in the regression analysis, several exhibit statistical significance and relatively large coefficients. For instance, the variables related to different age groups, such as "age25-34 years," "age35-54 years," "age5-14 years," "age55-74 years," and "age75+ years," all show strong statistical significance with large coefficients. This suggests that age group composition plays a significant role in explaining variations in suicide rates. Similarly, the variable "sexmale" (representing male gender) also has a highly significant coefficient, indicating a strong association between gender and suicide rates. Additionally, the variable "year" exhibits statistical significance, suggesting that the year in which data was recorded has an impact on suicide rates. These findings indicate that factors related to age, gender, and time may be important contributors to suicide rates and warrant further exploration. 
+
+
 
 ```{r, echo=FALSE}
 ggplot(data = master, aes(x = `gdp_per_capita....`, y = `suicides.100k.pop`)) +
@@ -78,12 +87,9 @@ master <- master |>
 
 ggplot(data = master, aes(x = age_group, y = suicides_no, fill = age_group)) +
   geom_bar(stat = "identity") +
-  labs(title = "Suicide Count by Age Group", x = "Age Group", y = "Number of Suicides") 
-```
-```{r, echo=FALSE}
-ggplot(data = master, aes(x = age, y = suicides_no, fill = age)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Suicide Count by Age Group", x = "Age Group", y = "Number of Suicides") 
+  scale_x_continuous(breaks = 1:6, labels = c("5-14", "15-24", "25-34", "35-54", "55-74", "75+")) +
+  labs(title = "Suicide Count by Age Group", x = "Age Group", y = "Number of Suicides") +
+  guides(fill = FALSE)
 ```
 
 For the last graph, I produced a box plot, portraying suicide occurrences based on the different generation categories (i.e. Boomers, GenZ, Millenials, etc.). This graphic was very interesting as it is reflective of suicide rates among specific generations, perhaps indicating sociocultural norms of the given generation. Among the generations, it is apparent that Boomers committed the highest count of suicide while Generation Z committed the fewest count. If I had the time and resources to continue with this project, I would be interested in further parcing out this data and assessing when each of these members of the generation committed suicide. Given that Boomers are older than Generation Z, the result may be inaccurately portraying Generation Z as a generation of less suicide when in reality, the generation has not lived long enough to reach the high-suicide-rate ages. 
