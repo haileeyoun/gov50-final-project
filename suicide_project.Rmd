@@ -1,5 +1,5 @@
 ---
-title: "Suicide Rate across Countries between 1985 and 2016"
+title: "Suicide Rates across Countries between 1985 and 2016"
 author: "Hailee Youn"
 description: "Gov 50 Final Project"
 output:
