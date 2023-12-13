@@ -1541,37 +1541,6 @@ The positive coefficient (0.000016) suggests that, on average, an increase of $1
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="suicide_project_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 <pre><code>
-Call:
-lm(formula = suicides.100k.pop ~ gdp_per_capita.... + age + sex + 
-    generation + year, data = master)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--34.059  -7.970  -1.928   5.910 192.087 
-
-Coefficients:
-                            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                2.469e+02  4.463e+01   5.532 3.19e-08 ***
-gdp_per_capita....         1.668e-05  5.370e-06   3.107  0.00189 ** 
-age25-34 years             3.521e+00  4.008e-01   8.784  &lt; 2e-16 ***
-age35-54 years             6.836e+00  6.244e-01  10.948  &lt; 2e-16 ***
-age5-14 years             -8.937e+00  4.152e-01 -21.524  &lt; 2e-16 ***
-age55-74 years             8.971e+00  9.363e-01   9.581  &lt; 2e-16 ***
-age75+ years               1.660e+01  1.087e+00  15.266  &lt; 2e-16 ***
-sexmale                    1.485e+01  1.907e-01  77.833  &lt; 2e-16 ***
-generationG.I. Generation -1.229e-01  8.228e-01  -0.149  0.88130    
-generationGeneration X     5.397e-01  4.794e-01   1.126  0.26021    
-generationGeneration Z     2.415e+00  1.053e+00   2.293  0.02186 *  
-generationMillenials       9.360e-01  7.367e-01   1.271  0.20391    
-generationSilent          -1.434e+00  5.348e-01  -2.681  0.00735 ** 
-year                      -1.231e-01  2.252e-02  -5.469 4.57e-08 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Residual standard error: 15.91 on 27806 degrees of freedom
-Multiple R-squared:  0.2965,    Adjusted R-squared:  0.2962 
-F-statistic: 901.4 on 13 and 27806 DF,  p-value: &lt; 2.2e-16</code></pre>
-<pre><code>
 =====================================================
                               Dependent variable:    
                           ---------------------------
@@ -1639,7 +1608,7 @@ Note:                     *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <p>Conclusion:</p>
 <p>Upon conducting an analysis of the data, I am unable to support my original hypothesis that as GDP per capita rises, suicide rates will exhibit a corresponding decline. One limitation of this data set is that it focuses on the aggregate GDP per capita of countries rather than providing specific information about the countries where suicides occurred and the socioeconomic status of the individuals involved. The GDP of the country may not necessarily be reflective of suicide victims’ individual financial situations and therefore not have a relationship with suicide rates. Thus, if I were to replicate this study, I would be interested in comparing suicide rates with individuals’ income, rather than GDP per capita. Furthermore, this study relies on cross-sectional data, which makes it challenging to establish causation. To improve our analysis, we would benefit from longitudinal data to explore causality and the dynamics of this relationship over time. We would also consider incorporating additional relevant variables and conducting more detailed subgroup analyses to better understand the nuances of the relationship between GDP per capita and suicide rates. Finally, if time and funds allowed, conducting surveys or collecting more granular data at the individual level would provide a more comprehensive view of the factors contributing to suicide.</p>
 <p>As a by-product of generating my regression and discovering the lack of a strong relationship between GDP per capita and suicide, I discovered large coefficient values (both positive and negative) with statistically significant corresponding p-values for the variables of age and sex of the suicide victims. This highlights that further investigations into factors that may be correlated with suicide–even within the breadth of this data set–can be fruitful. Additionally, we do not have information on potential confounding variables, such as mental health services availability, cultural factors, or other socioeconomic indicators that could impact suicide rates. Assessing these additional factors and their relationship with suicide rates would also be meaningful to explore.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
