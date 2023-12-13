@@ -53,10 +53,10 @@ library(stargazer)
 stargazer(model1, type = "text")
 ```
 
-The main coefficient of interest is the one associated with "gdp_per_capita....", which has an estimated coefficient of approximately 0.000016 with a standard error of approximately 0.00001. The p-value for this coefficient is 0.00189, denoted as '***,' which signifies statistical significance at the significance level of 0.05.
+The main coefficient of interest is the one associated with "gdp_per_capita....", which has an estimated coefficient of approximately 0.00002 with a standard error of approximately 0.00001. The p-value for this coefficient is 0.00189, denoted as '***,' which signifies statistical significance at the significance level of 0.05.
 
 In this context, the coefficient indicates the estimated change in the suicide rate (suicides per 100k population) for a one-unit increase in GDP per capita. In this case, the unit is $1,000 because of the scale of the GDP variable.
-The positive coefficient (0.000016) suggests that, on average, an increase of $1,000 in GDP per capita is associated with an increase in the suicide rate. However, this relationship is very small and close to zero, given how small the value of the coefficient is. However, the small p-value (0.00189) indicates that the coefficient is statistically significant, suggesting that this relationship--albeit very small--is unlikely to have occurred by random chance alone.
+The positive coefficient (0.00002) suggests that, on average, an increase of $1,000 in GDP per capita is associated with an increase in the suicide rate. However, this relationship is very small and close to zero, given how small the value of the coefficient is. However, the small p-value (0.00189) indicates that the coefficient is statistically significant, suggesting that this relationship--albeit very small--is unlikely to have occurred by random chance alone.
 
 Although the statistical analysis shows that the coefficient is statistically significant, it's important to emphasize that this does not imply a direct causal relationship between an increase in GDP per capita and a rise in the suicide rate as correlation does not imply causation. Furthermore, given the relatively weak association observed between GDP per capita and the occurrence of suicides, it is difficult to make definitive statements about the extent of their connection.
 
